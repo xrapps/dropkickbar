@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import {useNavigation} from '@react-navigation/native';
-import CapitalHeader from '../components/CapitalHeader';
-import CapitalComponent from '../components/CapitalComponent';
+import DropKickHeader from '../components/DropKickHeader';
+import DropKickComponent from '../components/DropKickComponent';
 import BackgroundImage from '../assets/background.png';
 
 const InputField = ({placeholder, value, onChangeText}) => (
@@ -42,13 +42,13 @@ export default function () {
 
   const handleReservation = () => {
     navigation.navigate('DrawerNavigator', {
-      screen: 'CapitalReservationSuccessScreen',
+      screen: 'DropKickReservationSuccessScreen',
     });
   };
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <CapitalHeader />
+      <DropKickHeader />
 
       <Text style={styles.title}>Резерв столика</Text>
 
@@ -83,7 +83,7 @@ export default function () {
           onChangeText={text => handleInputChange('date', text)}
         />
 
-        <CapitalComponent
+        <DropKickComponent
           text={'Зарезервировать'}
           style={styles.button}
           onPress={handleReservation}
@@ -107,8 +107,10 @@ const styles = StyleSheet.create({
     fontSize: 35,
     fontFamily: FONTS.bold,
     color: COLORS.black,
-    margin: 20,
+    marginTop: 20,
     textAlign: 'center',
+    backgroundColor: COLORS.main,
+    paddingVertical: 10,
   },
   main: {
     justifyContent: 'space-between',

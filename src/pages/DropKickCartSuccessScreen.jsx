@@ -10,20 +10,20 @@ import {
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import QRCode from 'react-native-qrcode-svg';
 import {useNavigation} from '@react-navigation/native';
-import CapitalHeader from '../components/CapitalHeader';
-import CapitalComponent from '../components/CapitalComponent';
+import DropKickHeader from '../components/DropKickHeader';
+import DropKickComponent from '../components/DropKickComponent';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
   const navigation = useNavigation();
 
   const handleNavigateHome = () => {
-    navigation.navigate('DrawerNavigator', {screen: 'CapitalHomeScreen'});
+    navigation.navigate('DrawerNavigator', {screen: 'DropKickHomeScreen'});
   };
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <CapitalHeader />
+      <DropKickHeader />
 
       <Text style={styles.text}>Спасибо за заказ!</Text>
 
@@ -40,7 +40,7 @@ export default function () {
         />
       </View>
 
-      <CapitalComponent
+      <DropKickComponent
         text="На главную"
         style={styles.button}
         onPress={handleNavigateHome}

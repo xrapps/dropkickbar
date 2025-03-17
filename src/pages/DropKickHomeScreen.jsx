@@ -1,21 +1,21 @@
 import React from 'react';
 import {StyleSheet, ImageBackground, FlatList, Text} from 'react-native';
-import CapitalHeader from '../components/CapitalHeader';
-import CapitalMenuComponent from '../components/CapitalMenuComponent';
+import DropKickHeader from '../components/DropKickHeader';
+import DropKickMenuComponent from '../components/DropKickMenuComponent';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
-import {frenchCuisineApp4} from '../assets/products';
+import {burgerApp4} from '../assets/products';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
-  const renderProduct = ({item}) => <CapitalMenuComponent item={item} />;
+  const renderProduct = ({item}) => <DropKickMenuComponent item={item} />;
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <CapitalHeader />
+      <DropKickHeader />
 
       <Text style={styles.title}>Меню</Text>
 
       <FlatList
-        data={frenchCuisineApp4}
+        data={burgerApp4}
         renderItem={renderProduct}
         keyExtractor={(item, index) => index.toString()}
         contentContainerStyle={styles.main}
@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 20,
     fontFamily: FONTS.bold,
-    color: COLORS.black,
+    color: COLORS.white,
+    backgroundColor: COLORS.main,
+    paddingVertical: 10,
   },
 });

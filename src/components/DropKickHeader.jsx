@@ -15,7 +15,7 @@ export default function ({back = false}) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate('CapitalCartScreen')}>
+        onPress={() => navigation.navigate('DropKickCartScreen')}>
         <Image source={Cart} style={styles.image} />
       </TouchableOpacity>
     </View>

@@ -3,9 +3,9 @@ import {View, StyleSheet, Text, TouchableOpacity, Image} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {AppContext} from './AppContext';
 import {COLORS, FONTS, width} from '../helpers/colors';
-import {frenchCuisineApp4} from '../assets/products';
+import {burgerApp4} from '../assets/products';
 
-const CapitalCartItemComponent = ({item}) => {
+const DropKickCartItemComponent = ({item}) => {
   const {shouldRefresh, toggleRefresh} = useContext(AppContext);
   const [carts, setCarts] = useState([]);
 
@@ -49,7 +49,7 @@ const CapitalCartItemComponent = ({item}) => {
     fetchCartItems();
   }, [shouldRefresh]);
 
-  const productImage = frenchCuisineApp4.find(p => p.name === item.name)?.image;
+  const productImage = burgerApp4.find(p => p.name === item.name)?.image;
 
   return (
     <View style={styles.container}>
@@ -177,4 +177,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CapitalCartItemComponent;
+export default DropKickCartItemComponent;

@@ -7,7 +7,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
-import CapitalHeader from '../components/CapitalHeader';
+import DropKickHeader from '../components/DropKickHeader';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
@@ -27,51 +27,23 @@ export default function () {
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <CapitalHeader />
+      <DropKickHeader />
 
       <Text style={styles.title}>Трансляции</Text>
 
       <ScrollView
         style={{flex: 1}}
         contentContainerStyle={{paddingBottom: 100, marginTop: 15}}>
-        {renderBroadcast(
-          'NHL Playoffs',
-          '02.05 19:45',
-          'Tampa Bay Lightning \n' + 'Boston Bruins',
-        )}
-        {renderBroadcast(
-          'KHL Gagarin',
-          '04.05 20:30',
-          'CSKA Moscow \n' + 'Ak Bars Kazan',
-        )}
-        {renderBroadcast('SHL Finals', '06.05 18:00', 'Frolunda \n' + 'Lulea')}
-        {renderBroadcast('Liiga', '08.05 17:30', 'Tappara \n' + 'HIFK')}
-        {renderBroadcast(
-          'AHL',
-          '10.05 21:00',
-          'Hershey Bears \n' + 'Chicago Wolves',
-        )}
-        {renderBroadcast(
-          'DEL Playoffs',
-          '12.05 19:15',
-          'Eisbären Berlin \n' + 'Adler Mannheim',
-        )}
-        {renderBroadcast('Swiss NL', '14.05 20:45', 'ZSC Lions \n' + 'EV Zug')}
-        {renderBroadcast(
-          'NCAA Frozen',
-          '16.05 18:30',
-          'Minnesota \n' + 'Denver',
-        )}
-        {renderBroadcast(
-          'Czech Extra',
-          '18.05 17:00',
-          'Sparta Prague \n' + 'Ocelari Trinec',
-        )}
-        {renderBroadcast(
-          'EIHL',
-          '20.05 16:45',
-          'Sheffield Steelers \n' + 'Cardiff Devils',
-        )}
+        {renderBroadcast('ATP Tour', '02.04 13:00', 'Novak Djokovic \n' + 'Carlos Alcaraz')}
+        {renderBroadcast('WTA Tour', '05.04 15:45', 'Iga Swiatek \n' + 'Aryna Sabalenka')}
+        {renderBroadcast('Davis Cup', '08.04 17:15', 'France \n' + 'Australia')}
+        {renderBroadcast('Fed Cup', '11.04 19:30', 'USA \n' + 'Russia')}
+        {renderBroadcast('Grand Slam', '14.04 21:00', 'Rafael Nadal \n' + 'Daniil Medvedev')}
+        {renderBroadcast('ATP Masters', '17.04 23:15', 'Alexander Zverev \n' + 'Stefanos Tsitsipas')}
+        {renderBroadcast('WTA Premier', '20.04 14:30', 'Simona Halep \n' + 'Naomi Osaka')}
+        {renderBroadcast('Cha Tour', '23.04 16:45', 'Lorenzo Musetti \n' + 'Jannik Sinner')}
+        {renderBroadcast('Next Gen', '26.04 19:00', 'Holger Rune \n' + 'Felix Auger-Aliassime')}
+        {renderBroadcast('Laver Cup', '29.04 21:15', 'Team Europe \n' + 'Team World')}
       </ScrollView>
     </ImageBackground>
   );
@@ -91,6 +63,7 @@ const styles = StyleSheet.create({
     borderColor: COLORS.main,
     borderWidth: 2,
     paddingLeft: 20,
+    backgroundColor: COLORS.white,
   },
   league: {
     fontSize: 20,
@@ -128,7 +101,9 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontFamily: FONTS.bold,
     color: COLORS.black,
-    margin: 20,
     textAlign: 'center',
+    backgroundColor: COLORS.main,
+    marginTop: 30,
+    paddingVertical: 10,
   },
 });

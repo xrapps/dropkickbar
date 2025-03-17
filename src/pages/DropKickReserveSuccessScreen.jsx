@@ -2,20 +2,20 @@ import React from 'react';
 import {Image, Text, StyleSheet, ImageBackground} from 'react-native';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import {useNavigation} from '@react-navigation/native';
-import CapitalHeader from '../components/CapitalHeader';
-import CapitalComponent from '../components/CapitalComponent';
+import DropKickHeader from '../components/DropKickHeader';
+import DropKickComponent from '../components/DropKickComponent';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
   const navigation = useNavigation();
 
   const handleNavigateHome = () => {
-    navigation.navigate('DrawerNavigator', {screen: 'CapitalHomeScreen'});
+    navigation.navigate('DrawerNavigator', {screen: 'DropKickHomeScreen'});
   };
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <CapitalHeader />
+      <DropKickHeader />
 
       <Image
         source={require('../assets/success_icon.png')}
@@ -24,7 +24,7 @@ export default function () {
 
       <Text style={styles.text}>Спасибо за резерв!</Text>
 
-      <CapitalComponent
+      <DropKickComponent
         text="На главную"
         style={styles.button}
         onPress={handleNavigateHome}

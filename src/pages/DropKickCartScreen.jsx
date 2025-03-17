@@ -10,8 +10,8 @@ import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {AppContext} from '../components/AppContext';
 import DropKickCartItemComponent from '../components/DropKickCartItemComponent';
-import CapitalComponent from '../components/CapitalComponent';
-import CapitalHeader from '../components/CapitalHeader';
+import DropKickComponent from '../components/DropKickComponent';
+import DropKickHeader from '../components/DropKickHeader';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import BackgroundImage from '../assets/background.png';
 
@@ -40,8 +40,8 @@ export default function () {
 
   const handleOrder = () => {
     const destinationScreen = cart.length
-      ? 'CapitalCartSuccessScreen'
-      : 'CapitalHomeScreen';
+      ? 'DropKickCartSuccessScreen'
+      : 'DropKickHomeScreen';
     navigation.navigate('DrawerNavigator', {screen: destinationScreen});
     AsyncStorage.setItem('cartList', JSON.stringify([]));
     toggleRefresh(!shouldRefresh);
@@ -49,7 +49,7 @@ export default function () {
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <CapitalHeader />
+      <DropKickHeader />
 
       {!cart.length && (
         <>
@@ -78,7 +78,7 @@ export default function () {
         ''
       )}
 
-      <CapitalComponent
+      <DropKickComponent
         text={cart.length ? `ЗАКАЗАТЬ` : 'На главную'}
         style={styles.orderButton}
         onPress={handleOrder}

@@ -12,13 +12,13 @@ import {
   ImageBackground,
 } from 'react-native';
 import {COLORS, FONTS} from './helpers/colors';
-import CapitalHomeScreen from './pages/CapitalHomeScreen';
-import CapitalCartScreen from './pages/CapitalCartScreen';
-import CapitalCartSuccessScreen from './pages/CapitalCartSuccessScreen';
-import CapitalReservationScreen from './pages/CapitalReservationScreen';
-import CapitalReservationSuccessScreen from './pages/CapitalReserveSuccessScreen';
-import CapitalContactsScreen from './pages/CapitalContactsScreen';
-import CapitalTranslationsScreen from './pages/CapitalTranslationsScreen';
+import DropKickHomeScreen from './pages/DropKickHomeScreen';
+import DropKickCartScreen from './pages/DropKickCartScreen';
+import DropKickCartSuccessScreen from './pages/DropKickCartSuccessScreen';
+import DropKickReservationScreen from './pages/DropKickReservationScreen';
+import DropKickReservationSuccessScreen from './pages/DropKickReserveSuccessScreen';
+import DropKickContactsScreen from './pages/DropKickContactsScreen';
+import DropKickTranslationsScreen from './pages/DropKickTranslationsScreen';
 import CloseIcon from './assets/close_icon.png';
 import CartIcon from './assets/cart_icon.png';
 import Logo from './assets/logo.png';
@@ -61,10 +61,10 @@ function CustomDrawerContent(props) {
   const navigation = useNavigation();
 
   const drawerItems = [
-    {label: 'МЕНЮ', screen: 'CapitalHomeScreen'},
-    {label: 'ТРАНСЛЯЦИИ', screen: 'CapitalTranslationsScreen'},
-    {label: 'КОНТАКТЫ', screen: 'CapitalContactsScreen'},
-    {label: 'БРОНЬ СТОЛИКА', screen: 'CapitalReservationScreen'},
+    {label: 'МЕНЮ', screen: 'DropKickHomeScreen'},
+    {label: 'ТРАНСЛЯЦИИ', screen: 'DropKickTranslationsScreen'},
+    {label: 'КОНТАКТЫ', screen: 'DropKickContactsScreen'},
+    {label: 'БРОНЬ СТОЛИКА', screen: 'DropKickReservationScreen'},
   ];
 
   const navigateToScreen = screen => {
@@ -92,7 +92,7 @@ function CustomDrawerContent(props) {
           </TouchableOpacity>
         ))}
       </View>
-      <TouchableOpacity onPress={() => navigateToScreen('CapitalCartScreen')}>
+      <TouchableOpacity onPress={() => navigateToScreen('DropKickCartScreen')}>
         <Image source={CartIcon} style={styles.cartIcon} />
       </TouchableOpacity>
     </ImageBackground>
@@ -100,18 +100,18 @@ function CustomDrawerContent(props) {
 }
 
 const drawerScreens = [
-  {name: 'CapitalHomeScreen', component: CapitalHomeScreen},
-  {name: 'CapitalCartScreen', component: CapitalCartScreen},
-  {name: 'CapitalCartSuccessScreen', component: CapitalCartSuccessScreen},
-  {name: 'CapitalReservationScreen', component: CapitalReservationScreen},
+  {name: 'DropKickHomeScreen', component: DropKickHomeScreen},
+  {name: 'DropKickCartScreen', component: DropKickCartScreen},
+  {name: 'DropKickCartSuccessScreen', component: DropKickCartSuccessScreen},
+  {name: 'DropKickReservationScreen', component: DropKickReservationScreen},
   {
-    name: 'CapitalReservationSuccessScreen',
-    component: CapitalReservationSuccessScreen,
+    name: 'DropKickReservationSuccessScreen',
+    component: DropKickReservationSuccessScreen,
   },
-  {name: 'CapitalContactsScreen', component: CapitalContactsScreen},
+  {name: 'DropKickContactsScreen', component: DropKickContactsScreen},
   {
-    name: 'CapitalTranslationsScreen',
-    component: CapitalTranslationsScreen,
+    name: 'DropKickTranslationsScreen',
+    component: DropKickTranslationsScreen,
   },
 ];
 
@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 40,
     marginTop: 40,
+    backgroundColor: COLORS.white,
   },
   logo: {
     width: width * 0.8,

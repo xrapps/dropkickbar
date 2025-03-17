@@ -2,15 +2,15 @@ import React from 'react';
 import {View, StyleSheet, Text, TextInput, ImageBackground} from 'react-native';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import {useNavigation} from '@react-navigation/native';
-import CapitalHeader from '../components/CapitalHeader';
-import CapitalComponent from '../components/CapitalComponent';
+import DropKickHeader from '../components/DropKickHeader';
+import DropKickComponent from '../components/DropKickComponent';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
   const navigation = useNavigation();
 
   const handleNavigateHome = () => {
-    navigation.navigate('DrawerNavigator', {screen: 'CapitalHomeScreen'});
+    navigation.navigate('DrawerNavigator', {screen: 'DropKickHomeScreen'});
   };
 
   const renderTextInput = placeholder => (
@@ -26,7 +26,7 @@ export default function () {
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <CapitalHeader />
+      <DropKickHeader />
 
       <Text style={styles.title}>Контакты</Text>
 
@@ -37,7 +37,7 @@ export default function () {
         {renderTextInput('Индекс')}
       </View>
 
-      <CapitalComponent
+      <DropKickComponent
         text="На главную"
         style={styles.button}
         onPress={handleNavigateHome}
@@ -60,8 +60,10 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontFamily: FONTS.bold,
     color: COLORS.black,
-    margin: 20,
+    marginTop: 20,
     textAlign: 'center',
+    backgroundColor: COLORS.main,
+    paddingVertical: 10,
   },
   subtitle: {
     fontSize: 20,
